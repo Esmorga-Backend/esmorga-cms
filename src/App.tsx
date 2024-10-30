@@ -1,13 +1,11 @@
-import esmorgaLogo from '/esmorga-icon.svg'
-import './App.css'
+import LoginHeader from "./components/LoginHeader"
 
 function App() {
   return (
     <>
       <div>
-          <img src={esmorgaLogo} className="logo" alt="Esmorga logo" />
+        <LoginHeader />
       </div>
-      <h1>Esmorga</h1>
     </>
   )
 }
