@@ -47,6 +47,8 @@ export class NetworkError extends ApiError {
 
 export type ErrorMap = Record<number, string>;
 
+import i18n from "../i18n/config";
+
 /**
  * Handles HTTP errors with custom mapping per endpoint
  * @param status - HTTP status code
@@ -67,6 +69,6 @@ export const handleApiError = (status: number, customErrorMap?: ErrorMap): never
     case 422:
       throw new ValidationError();
     default:
-      throw new ApiError("Algo ha fallado, inténtalo de nuevo", status);
+      throw new ApiError(i18n.t("default_error_request_fail"), status);
   }
 };

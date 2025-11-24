@@ -1,5 +1,6 @@
 import { type FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import styles from "./Login.module.css";
 import paths from "../routers/paths";
 import Loader from "../components/Loader";
@@ -20,6 +21,7 @@ type FieldErrors = {
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -64,7 +66,7 @@ const Login: React.FC = () => {
       if (error instanceof ApiError) {
         setSubmitError(error.message);
       } else {
-        setSubmitError("Algo ha fallado, inténtalo de nuevo");
+        setSubmitError(t("default_error_request_fail"));
       }
     } finally {
       setIsSubmitting(false);
@@ -80,7 +82,7 @@ const Login: React.FC = () => {
           <img src="/esmorga_icon.svg" alt="Esmorga Logo" className={styles.logo} />
         </div>
 
-        <h1 className={styles.title}>La Esmorga no se organiza sola</h1>
+        <h1 className={styles.title}>{t("screen_login_title")}</h1>
 
         <form
           className={styles.form}
@@ -90,12 +92,12 @@ const Login: React.FC = () => {
         >
           <div className={styles.fieldGroup}>
             <label htmlFor="email" className={styles.label}>
-              Email
+              {t("field_title_email")}
             </label>
             <input
               type="email"
               id="email"
-              placeholder="tuemail@ejemplo.com"
+              placeholder={t("placeholder_email")}
               className={styles.input}
               value={email}
               maxLength={EMAIL_MAX_LENGTH}
@@ -112,14 +114,14 @@ const Login: React.FC = () => {
 
           <div className={styles.fieldGroup}>
             <label htmlFor="password" className={styles.label}>
-              Contraseña
+              {t("field_title_password")}
             </label>
 
             <div className={styles.passwordWrapper}>
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
-                placeholder="contraseña"
+                placeholder={t("placeholder_password")}
                 value={password}
                 minLength={PASSWORD_MIN_LENGTH}
                 maxLength={PASSWORD_MAX_LENGTH}
@@ -134,7 +136,7 @@ const Login: React.FC = () => {
                 type="button"
                 className={styles.eyeButton}
                 onClick={() => setShowPassword((prev) => !prev)}
-                aria-label={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+                aria-label={showPassword ? t("hide_password") : t("show_password")}
                 aria-pressed={showPassword}
               >
                 <img
@@ -157,7 +159,7 @@ const Login: React.FC = () => {
             disabled={isSubmitting}
             aria-busy={isSubmitting}
           >
-            {isSubmitting ? <Loader size={20} color="#fff" /> : "Iniciar sesión"}
+            {isSubmitting ? <Loader size={20} color="#fff" /> : t("button_login")}
           </button>
         </form>
       </main>

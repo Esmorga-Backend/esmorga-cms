@@ -1,3 +1,4 @@
+import i18n from "../i18n/config";
 import { apiClient } from "./config";
 import { handleApiError, NetworkError } from "./errors";
 
@@ -21,9 +22,9 @@ export const login = async (email: string, password: string): Promise<LoginRespo
     });
 
     const errorMap = {
-      401: "Revisa tus permisos y/o tus credenciales",
-      403: "Usuario no verificado",
-      423: "Usuario bloqueado",
+      401: i18n.t("inline_error_invalid_login_credentials"),
+      403: i18n.t("inline_error_unverified_user"),
+      423: i18n.t("inline_error_blocked_user"),
     };
 
     if (!response.ok) {
