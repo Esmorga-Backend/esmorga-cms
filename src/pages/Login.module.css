@@ -1,0 +1,95 @@
+@reference "../styles/global.css";
+
+.screen {
+  @apply min-h-screen flex items-center justify-center bg-neutral-100 p-4 sm:p-6;
+}
+
+.card {
+  @apply w-full max-w-[38rem] bg-white rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl p-6 sm:p-10 text-base sm:text-lg;
+}
+
+.logoContainer {
+  @apply flex justify-center mb-4 sm:mb-6;
+}
+
+.logo {
+  @apply w-14 h-14 sm:w-20 sm:h-20 rounded-lg sm:rounded-xl object-contain;
+}
+
+.title {
+  @apply text-center text-2xl sm:text-3xl font-bold text-neutral-800 mb-7 sm:mb-9;
+}
+
+.form {
+  @apply flex flex-col;
+}
+
+.fieldGroup {
+  @apply flex flex-col gap-2 sm:gap-2.5;
+}
+
+.fieldGroup + .fieldGroup {
+  @apply mt-3;
+}
+
+.submitButton {
+  @apply mt-6;
+}
+
+.label {
+  @apply block text-sm sm:text-base font-medium text-neutral-700;
+}
+
+.input {
+  @apply w-full rounded-lg border border-[#DDDDDD] bg-white px-4 sm:px-5 py-3 sm:py-3.5 text-base
+         outline-none ring-0
+         focus:border-[#961444] focus:ring-2 focus:ring-rose-300
+         transition;
+}
+
+.passwordWrapper {
+  @apply relative;
+}
+
+.passwordWrapper input {
+  @apply w-full rounded-lg border border-[#DDDDDD] bg-white px-4 sm:px-5 py-3 sm:py-3.5 pr-10 sm:pr-12 text-base
+         outline-none ring-0
+         focus:border-[#961444] focus:ring-2 focus:ring-rose-300
+         transition;
+}
+
+.eyeButton {
+  @apply absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 
+         bg-transparent border-0 cursor-pointer
+         text-neutral-600 hover:text-neutral-800
+         transition p-1;
+}
+
+.eyeIcon {
+  @apply w-6 h-6 block;
+}
+
+.error {
+  @apply text-sm text-[#D10000] font-medium h-4 leading-none;
+}
+
+.submitErrorContainer {
+  @apply mt-4 mb-2;
+}
+
+.submitError {
+  @apply text-sm text-[#D10000] font-medium text-center block;
+}
+
+.button {
+  @apply w-full rounded-lg bg-[#961444] text-white font-medium py-3 sm:py-3.5 text-base sm:text-lg
+         cursor-pointer
+         active:opacity-90
+         transition
+         flex items-center justify-center
+         h-[3rem];
+}
+
+.button:disabled {
+  @apply opacity-70 cursor-not-allowed;
+}
