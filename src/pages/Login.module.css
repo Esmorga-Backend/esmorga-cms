@@ -5,19 +5,19 @@
 }
 
 .card {
-  @apply w-full max-w-[38rem] bg-white rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl p-4 sm:p-10 text-base sm:text-lg;
+  @apply w-full max-w-[38rem] 2xl:max-w-[50rem] bg-white rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl p-4 sm:p-10 2xl:p-14 text-base sm:text-lg 2xl:text-xl;
 }
 
 .logoContainer {
-  @apply flex justify-center mb-2 sm:mb-6;
+  @apply flex justify-center mb-2 sm:mb-6 2xl:mb-8;
 }
 
 .logo {
-  @apply w-10 h-10 sm:w-20 sm:h-20 rounded-lg sm:rounded-xl object-contain;
+  @apply w-10 h-10 sm:w-20 sm:h-20 2xl:w-28 2xl:h-28 rounded-lg sm:rounded-xl object-contain;
 }
 
 .title {
-  @apply text-center text-xl sm:text-3xl font-bold text-neutral-800 mb-4 sm:mb-9;
+  @apply text-center text-xl sm:text-3xl 2xl:text-5xl font-bold text-neutral-800 mb-4 sm:mb-9 2xl:mb-12;
 }
 
 .form {
@@ -37,11 +37,11 @@
 }
 
 .label {
-  @apply block text-sm sm:text-base font-medium text-neutral-700;
+  @apply block text-sm sm:text-base 2xl:text-xl font-medium text-neutral-700;
 }
 
 .input {
-  @apply w-full rounded-lg border border-[#DDDDDD] bg-white px-3 sm:px-5 py-2.5 sm:py-3.5 text-base
+  @apply w-full rounded-lg 2xl:rounded-xl border border-[#DDDDDD] bg-white px-3 sm:px-5 2xl:px-7 py-2.5 sm:py-3.5 2xl:py-5 text-base 2xl:text-xl
          outline-none ring-0
          focus:border-[#961444] focus:ring-2 focus:ring-rose-300
          transition;
@@ -52,7 +52,7 @@
 }
 
 .passwordWrapper input {
-  @apply w-full rounded-lg border border-[#DDDDDD] bg-white px-3 sm:px-5 py-2.5 sm:py-3.5 pr-10 sm:pr-12 text-base
+  @apply w-full rounded-lg 2xl:rounded-xl border border-[#DDDDDD] bg-white px-3 sm:px-5 2xl:px-7 py-2.5 sm:py-3.5 2xl:py-5 pr-10 sm:pr-12 2xl:pr-16 text-base 2xl:text-xl
          outline-none ring-0
          focus:border-[#961444] focus:ring-2 focus:ring-rose-300
          transition;
@@ -66,7 +66,7 @@
 }
 
 .eyeIcon {
-  @apply w-6 h-6 block;
+  @apply w-6 h-6 2xl:w-8 2xl:h-8 block;
 }
 
 .error {
@@ -82,12 +82,12 @@
 }
 
 .button {
-  @apply w-full rounded-lg bg-[#961444] text-white font-medium text-base sm:text-lg
+  @apply w-full rounded-lg 2xl:rounded-xl bg-[#961444] text-white font-medium text-base sm:text-lg 2xl:text-2xl
          cursor-pointer
          active:opacity-90
          transition
          flex items-center justify-center
-         h-[2.75rem] sm:h-[3rem];
+         h-[2.75rem] sm:h-[3rem] 2xl:h-[4rem];
 }
 
 .button:disabled {
