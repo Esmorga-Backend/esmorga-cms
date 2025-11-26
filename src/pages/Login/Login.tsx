@@ -2,17 +2,17 @@ import { type FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import styles from "./Login.module.css";
-import paths from "../routers/paths";
-import Loader from "../components/Loader";
+import paths from "../../routers/paths";
+import Loader from "../../components/Loader";
 import {
   validateEmail,
   validatePassword,
   EMAIL_MAX_LENGTH,
   PASSWORD_MIN_LENGTH,
   PASSWORD_MAX_LENGTH,
-} from "../validations/loginValidations";
-import { login } from "../api/account";
-import { ApiError } from "../api/errors";
+} from "../../validations/loginValidations";
+import { login } from "../../api/account";
+import { ApiError } from "../../api/errors";
 
 type FieldErrors = {
   email?: string;
