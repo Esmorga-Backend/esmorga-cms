@@ -32,7 +32,7 @@ export class NotFoundError extends ApiError {
 }
 
 export class ValidationError extends ApiError {
-  constructor(message = "Datos inválidos") {
+  constructor(message = "Datos incorrectos") {
     super(message, 422, "VALIDATION_ERROR");
     this.name = "ValidationError";
   }
@@ -52,11 +52,11 @@ import i18n from "../i18n/config";
 /**
  * Handles HTTP errors with custom mapping per endpoint
  * @param status - HTTP status code
- * @param customErrorMap - Custom error mapping for this specific endpoint
+ * @param defaultErrorMap - Default error mapping for this specific endpoint
  */
-export const handleApiError = (status: number, customErrorMap?: ErrorMap): never => {
-  if (customErrorMap && customErrorMap[status]) {
-    throw new ApiError(customErrorMap[status], status);
+export const handleApiError = (status: number, defaultErrorMap?: ErrorMap): never => {
+  if (defaultErrorMap && defaultErrorMap[status]) {
+    throw new ApiError(defaultErrorMap[status], status);
   }
 
   switch (status) {

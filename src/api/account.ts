@@ -40,7 +40,7 @@ export const login = async (email: string, password: string): Promise<LoginRespo
     return data;
   } catch (error) {
     if (error instanceof TypeError) {
-      throw new NetworkError();
+      throw new NetworkError(i18n.t("default_error_request_fail"));
     }
     throw error;
   }

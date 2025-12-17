@@ -78,18 +78,13 @@ const Login: React.FC = () => {
   return (
     <div className={styles.screen}>
       <main className={styles.card}>
-        <div className={styles.logoContainer} aria-hidden="true">
+        <div className={styles.logoContainer}>
           <img src="/esmorga_icon.svg" alt="Esmorga Logo" className={styles.logo} />
         </div>
 
         <h1 className={styles.title}>{t("screen_login_title")}</h1>
 
-        <form
-          className={styles.form}
-          onSubmit={handleSubmit}
-          noValidate
-          aria-label="Formulario de inicio de sesión"
-        >
+        <form className={styles.form} onSubmit={handleSubmit} noValidate>
           <div className={styles.fieldGroup}>
             <label htmlFor="email" className={styles.label}>
               {t("field_title_email")}
@@ -104,12 +99,8 @@ const Login: React.FC = () => {
               onChange={(e) => setEmail(e.target.value)}
               onBlur={handleEmailBlur}
               autoComplete="email"
-              aria-invalid={!!fieldErrors.email}
-              aria-describedby={fieldErrors.email ? "email-error" : undefined}
             />
-            <span id="email-error" className={styles.error}>
-              {fieldErrors.email || "\u00A0"}
-            </span>
+            <span className={styles.error}>{fieldErrors.email || "\u00A0"}</span>
           </div>
 
           <div className={styles.fieldGroup}>
@@ -128,36 +119,28 @@ const Login: React.FC = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 onBlur={handlePasswordBlur}
                 autoComplete="current-password"
-                aria-invalid={!!passwordInlineError}
-                aria-describedby={passwordInlineError ? "password-error" : undefined}
               />
 
               <button
                 type="button"
                 className={styles.eyeButton}
                 onClick={() => setShowPassword((prev) => !prev)}
-                aria-label={showPassword ? t("hide_password") : t("show_password")}
-                aria-pressed={showPassword}
               >
                 <img
                   src={showPassword ? "/eye-off.svg" : "/eye.svg"}
                   className={styles.eyeIcon}
                   alt=""
-                  aria-hidden="true"
                 />
               </button>
             </div>
 
-            <span id="password-error" className={styles.error}>
-              {passwordInlineError || "\u00A0"}
-            </span>
+            <span className={styles.error}>{passwordInlineError || "\u00A0"}</span>
           </div>
 
           <button
             type="submit"
             className={`${styles.button} ${styles.submitButton}`}
             disabled={isSubmitting}
-            aria-busy={isSubmitting}
           >
             {isSubmitting ? <Loader size={20} color="#fff" /> : t("button_login")}
           </button>

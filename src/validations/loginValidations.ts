@@ -11,7 +11,7 @@ export const validateEmail = (value: string): string | undefined => {
   if (trimmed.length > EMAIL_MAX_LENGTH) return i18n.t("inline_error_email");
   if (trimmed.includes(" ") || trimmed.includes("+")) return i18n.t("inline_error_email");
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   if (!emailRegex.test(trimmed)) return i18n.t("inline_error_email");
 
   return undefined;
