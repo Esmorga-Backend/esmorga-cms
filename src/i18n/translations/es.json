@@ -1,0 +1,17 @@
+{
+  "screen_login_title": "La Esmorga no se organiza sola",
+  "field_title_email": "Email",
+  "field_title_password": "Contraseña",
+  "button_login": "Iniciar sesión",
+  "placeholder_email": "tuemail@ejemplo.com",
+  "placeholder_password": "contraseña",
+  "inline_error_email": "Email incorrecto",
+  "inline_error_password": "Contraseña incorrecta",
+  "inline_error_empty_field": "Campo requerido",
+  "inline_error_invalid_login_credentials": "Revisa tus permisos y/o tus credenciales",
+  "inline_error_unverified_user": "Usuario no verificado",
+  "inline_error_blocked_user": "Usuario bloqueado",
+  "default_error_request_fail": "Algo ha fallado, inténtalo de nuevo",
+  "show_password": "Mostrar contraseña",
+  "hide_password": "Ocultar contraseña"
+}
