@@ -17,8 +17,7 @@ runs:
       uses: boris-amenitiz/lcov-pull-request-report@v1.0.0
       with:
         lcov-file: coverage/lcov.info
-        github-token: ${{ inputs. GITHUB_TOKEN }}
+        github-token: ${{ inputs.GITHUB_TOKEN }}
         comment-title: "📊 Code Coverage Report"
         all-files-minimum-coverage: ${{ inputs.minimum-coverage }}
         changed-files-minimum-coverage: ${{ inputs.minimum-coverage }}
-      shell: bash
