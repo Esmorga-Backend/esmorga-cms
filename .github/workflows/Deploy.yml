@@ -42,8 +42,14 @@ jobs:
       run: |
         npm install
         npm run build
+        echo "Build completed."
         cd ./dist
+        echo "Moved to dist folder."
+        pwd
+        ls -la
         zip -r $BUILD_PACKAGE ./*
+        echo "Zip file created"
+        ls -la
 
     - name: Install dependencies And Deploy PROD
       shell: bash
