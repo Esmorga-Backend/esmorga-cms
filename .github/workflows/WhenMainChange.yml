@@ -1,0 +1,14 @@
+name: Build Frontend
+run-name: Creating Frontend build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  DeployToQA:
+    uses: ./.github/workflows/Deploy.yml
+    secrets: inherit
+    with:
+      environment: QA
