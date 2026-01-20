@@ -12,7 +12,7 @@ print("Deploying "+build_package+" to "+hostname+":"+server_path)
 ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 if len(sys.argv)>4:
     key=sys.argv[4]
-    print("SSH="+key[0:25]+"..."+key[-25:])
+    print("SSH="+key[0:50]+"...")
     pkey = paramiko.RSAKey.from_private_key(io.StringIO(key))
     ssh_client.connect(hostname=hostname,port='22',username='ubuntu',pkey=pkey)
 else:
