@@ -93,3 +93,8 @@
 .button:disabled {
   @apply opacity-70 cursor-not-allowed;
 }
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none !important;
+}
