@@ -1,0 +1,23 @@
+name: "Generate Coverage Report"
+description: "Generates and publishes coverage report to PR"
+
+inputs:
+  GITHUB_TOKEN:
+    description: "GitHub token for PR comments"
+    required: true
+  minimum-coverage:
+    description: "Minimum coverage percentage required"
+    required: false
+    default: "70"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Coverage report on GitHub
+      uses: boris-amenitiz/lcov-pull-request-report@v1.0.0
+      with:
+        lcov-file: coverage/lcov.info
+        github-token: ${{ inputs.GITHUB_TOKEN }}
+        comment-title: "📊 Code Coverage Report"
+        all-files-minimum-coverage: ${{ inputs.minimum-coverage }}
+        changed-files-minimum-coverage: ${{ inputs.minimum-coverage }}
